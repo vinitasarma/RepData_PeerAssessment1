@@ -32,7 +32,7 @@ medianSteps<- median(total$x)
 **The mean of total steps taken per day is `r meanSteps` and the median is `r medianSteps`**
 
 ## What is the average daily activity pattern?
-```{r, echo = TRUE}
+```{r DailyActivity1, echo = TRUE}
 # Average steps taken per interval, averaged across all days.
 avgSteps<- aggregate(dataComplete$steps, by = list(dataComplete$interval), FUN = mean)
 
@@ -87,7 +87,7 @@ data_new$steps<- steps
 
 *4. Histogram of total number of steps taken each day *
 
-```{r, echo=TRUE}
+```{r HistogramImputed, echo=TRUE}
 # find total number of steps for each day
 totalnew<- aggregate(data_new$steps, by = list(data_new$date), FUN = sum)
 # histogram the total values
@@ -125,7 +125,7 @@ data_new["days"]<- factor(days)
 
 *2. Time Series Plots *
 
-```{r, echo=TRUE}
+```{r WeekdaysWeekends, echo=TRUE}
 
 #weekday data
 week<- aggregate(data_new$steps, by = list(data_new$interval, data_new$days), FUN = mean) 
